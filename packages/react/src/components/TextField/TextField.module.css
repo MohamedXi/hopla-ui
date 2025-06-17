@@ -1,0 +1,210 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+/* Base input styles */
+.input {
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+/* Label styles */
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #374151; /* gray-700 */
+}
+
+.labelDisabled {
+  opacity: 0.5;
+}
+
+.labelError {
+  color: #d32f2f; /* error-600 */
+}
+
+/* Helper text */
+.helperText {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6b7280; /* gray-500 */
+}
+
+.helperTextError {
+  color: #d32f2f; /* error-600 */
+}
+
+/* Variants */
+.outlined {
+  border: 1px solid #d1d5db; /* gray-300 */
+  background-color: white;
+}
+
+.outlinedFocus {
+  outline: none;
+}
+
+.outlinedError {
+  border-color: #d32f2f; /* error-600 */
+}
+
+.filled {
+  background-color: #f3f4f6; /* gray-100 */
+  border: 1px solid transparent;
+}
+
+.filledError {
+  background-color: #fdeded; /* error-50 */
+}
+
+.standard {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-color: #d1d5db; /* gray-300 */
+  border-radius: 0;
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.standardError {
+  border-color: #d32f2f; /* error-600 */
+}
+
+/* Colors for focus states */
+.primaryFocus.outlined {
+  border-color: #1976d2; /* primary-600 */
+}
+
+.secondaryFocus.outlined {
+  border-color: #9c27b0; /* secondary-600 */
+}
+
+.successFocus.outlined {
+  border-color: #2e7d32; /* success-600 */
+}
+
+.errorFocus.outlined {
+  border-color: #d32f2f; /* error-600 */
+}
+
+.warningFocus.outlined {
+  border-color: #ed6c02; /* warning-600 */
+}
+
+.infoFocus.outlined {
+  border-color: #0288d1; /* info-600 */
+}
+
+.primaryFocus.filled {
+  background-color: #e3f2fd; /* primary-50 */
+}
+
+.secondaryFocus.filled {
+  background-color: #f3e5f5; /* secondary-50 */
+}
+
+.successFocus.filled {
+  background-color: #e8f5e9; /* success-50 */
+}
+
+.errorFocus.filled {
+  background-color: #fdeded; /* error-50 */
+}
+
+.warningFocus.filled {
+  background-color: #fff3e0; /* warning-50 */
+}
+
+.infoFocus.filled {
+  background-color: #e1f5fe; /* info-50 */
+}
+
+.primaryFocus.standard {
+  border-color: #1976d2; /* primary-600 */
+}
+
+.secondaryFocus.standard {
+  border-color: #9c27b0; /* secondary-600 */
+}
+
+.successFocus.standard {
+  border-color: #2e7d32; /* success-600 */
+}
+
+.errorFocus.standard {
+  border-color: #d32f2f; /* error-600 */
+}
+
+.warningFocus.standard {
+  border-color: #ed6c02; /* warning-600 */
+}
+
+.infoFocus.standard {
+  border-color: #0288d1; /* info-600 */
+}
+
+/* Sizes */
+.small {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.medium {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.large {
+  font-size: 1.125rem;
+  padding: 0.75rem 1.25rem;
+}
+
+/* States */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input wrapper */
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Adornments */
+.startAdornment {
+  position: absolute;
+  left: 0.75rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.endAdornment {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.inputWithStartAdornment {
+  padding-left: 2.5rem;
+}
+
+.inputWithEndAdornment {
+  padding-right: 2.5rem;
+}

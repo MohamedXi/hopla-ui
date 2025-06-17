@@ -1,0 +1,312 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem; /* rounded-md */
+  font-weight: 500; /* font-medium */
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Variants */
+.filled {
+  color: white;
+}
+
+.outlined {
+  background-color: transparent;
+  border-width: 1px;
+}
+
+.text {
+  background-color: transparent;
+}
+
+/* Colors */
+.primaryFilled {
+  background-color: #1976d2;
+}
+
+.primaryFilled:hover {
+  background-color: #1565c0;
+}
+
+.primaryFilled:active {
+  background-color: #0d47a1;
+}
+
+.primaryOutlined {
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+.primaryOutlined:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+.primaryOutlined:active {
+  background-color: rgba(25, 118, 210, 0.12);
+}
+
+.primaryText {
+  color: #1976d2;
+}
+
+.primaryText:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+.primaryText:active {
+  background-color: rgba(25, 118, 210, 0.12);
+}
+
+/* Secondary */
+.secondaryFilled {
+  background-color: #9c27b0;
+}
+
+.secondaryFilled:hover {
+  background-color: #8e24aa;
+}
+
+.secondaryFilled:active {
+  background-color: #7b1fa2;
+}
+
+.secondaryOutlined {
+  border-color: #9c27b0;
+  color: #9c27b0;
+}
+
+.secondaryOutlined:hover {
+  background-color: rgba(156, 39, 176, 0.04);
+}
+
+.secondaryOutlined:active {
+  background-color: rgba(156, 39, 176, 0.12);
+}
+
+.secondaryText {
+  color: #9c27b0;
+}
+
+.secondaryText:hover {
+  background-color: rgba(156, 39, 176, 0.04);
+}
+
+.secondaryText:active {
+  background-color: rgba(156, 39, 176, 0.12);
+}
+
+/* Success */
+.successFilled {
+  background-color: #2e7d32;
+}
+
+.successFilled:hover {
+  background-color: #2e7d32;
+}
+
+.successFilled:active {
+  background-color: #1b5e20;
+}
+
+.successOutlined {
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+
+.successOutlined:hover {
+  background-color: rgba(46, 125, 50, 0.04);
+}
+
+.successOutlined:active {
+  background-color: rgba(46, 125, 50, 0.12);
+}
+
+.successText {
+  color: #2e7d32;
+}
+
+.successText:hover {
+  background-color: rgba(46, 125, 50, 0.04);
+}
+
+.successText:active {
+  background-color: rgba(46, 125, 50, 0.12);
+}
+
+/* Error */
+.errorFilled {
+  background-color: #d32f2f;
+}
+
+.errorFilled:hover {
+  background-color: #c62828;
+}
+
+.errorFilled:active {
+  background-color: #b71c1c;
+}
+
+.errorOutlined {
+  border-color: #d32f2f;
+  color: #d32f2f;
+}
+
+.errorOutlined:hover {
+  background-color: rgba(211, 47, 47, 0.04);
+}
+
+.errorOutlined:active {
+  background-color: rgba(211, 47, 47, 0.12);
+}
+
+.errorText {
+  color: #d32f2f;
+}
+
+.errorText:hover {
+  background-color: rgba(211, 47, 47, 0.04);
+}
+
+.errorText:active {
+  background-color: rgba(211, 47, 47, 0.12);
+}
+
+/* Warning */
+.warningFilled {
+  background-color: #ed6c02;
+}
+
+.warningFilled:hover {
+  background-color: #e65100;
+}
+
+.warningFilled:active {
+  background-color: #d84315;
+}
+
+.warningOutlined {
+  border-color: #ed6c02;
+  color: #ed6c02;
+}
+
+.warningOutlined:hover {
+  background-color: rgba(237, 108, 2, 0.04);
+}
+
+.warningOutlined:active {
+  background-color: rgba(237, 108, 2, 0.12);
+}
+
+.warningText {
+  color: #ed6c02;
+}
+
+.warningText:hover {
+  background-color: rgba(237, 108, 2, 0.04);
+}
+
+.warningText:active {
+  background-color: rgba(237, 108, 2, 0.12);
+}
+
+/* Info */
+.infoFilled {
+  background-color: #0288d1;
+}
+
+.infoFilled:hover {
+  background-color: #0277bd;
+}
+
+.infoFilled:active {
+  background-color: #01579b;
+}
+
+.infoOutlined {
+  border-color: #0288d1;
+  color: #0288d1;
+}
+
+.infoOutlined:hover {
+  background-color: rgba(2, 136, 209, 0.04);
+}
+
+.infoOutlined:active {
+  background-color: rgba(2, 136, 209, 0.12);
+}
+
+.infoText {
+  color: #0288d1;
+}
+
+.infoText:hover {
+  background-color: rgba(2, 136, 209, 0.04);
+}
+
+.infoText:active {
+  background-color: rgba(2, 136, 209, 0.12);
+}
+
+/* Sizes */
+.small {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.medium {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.large {
+  font-size: 1.125rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Other styles */
+.fullWidth {
+  width: 100%;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.startIcon {
+  margin-right: 0.5rem;
+}
+
+.endIcon {
+  margin-left: 0.5rem;
+}
+
+.loadingIcon {
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

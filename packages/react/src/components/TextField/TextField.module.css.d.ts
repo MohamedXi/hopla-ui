@@ -1,0 +1,35 @@
+declare const styles: {
+  readonly container: string;
+  readonly fullWidth: string;
+  readonly inlineBlock: string;
+  readonly input: string;
+  readonly label: string;
+  readonly labelDisabled: string;
+  readonly labelError: string;
+  readonly helperText: string;
+  readonly helperTextError: string;
+  readonly outlined: string;
+  readonly outlinedFocus: string;
+  readonly outlinedError: string;
+  readonly filled: string;
+  readonly filledError: string;
+  readonly standard: string;
+  readonly standardError: string;
+  readonly primaryFocus: string;
+  readonly secondaryFocus: string;
+  readonly successFocus: string;
+  readonly errorFocus: string;
+  readonly warningFocus: string;
+  readonly infoFocus: string;
+  readonly small: string;
+  readonly medium: string;
+  readonly large: string;
+  readonly disabled: string;
+  readonly inputWrapper: string;
+  readonly startAdornment: string;
+  readonly endAdornment: string;
+  readonly inputWithStartAdornment: string;
+  readonly inputWithEndAdornment: string;
+};
+
+export default styles;

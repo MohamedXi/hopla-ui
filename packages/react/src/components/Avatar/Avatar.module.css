@@ -1,0 +1,100 @@
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Sizes */
+.small {
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+}
+
+.medium {
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+}
+
+.large {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+/* Variants */
+.circular {
+  border-radius: 50%;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.square {
+  border-radius: 0;
+}
+
+/* Colors */
+.primary {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+.secondary {
+  background-color: #9c27b0;
+  color: #fff;
+}
+
+.success {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
+.error {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+.warning {
+  background-color: #ed6c02;
+  color: #fff;
+}
+
+.info {
+  background-color: #0288d1;
+  color: #fff;
+}
+
+.default {
+  background-color: #e0e0e0;
+  color: #616161;
+}
+
+/* Content styles */
+.img {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  object-fit: cover;
+  color: transparent;
+  text-indent: 10000px;
+}
+
+.children {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.fallback {
+  width: 75%;
+  height: 75%;
+}

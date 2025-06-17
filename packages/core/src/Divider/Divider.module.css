@@ -1,0 +1,70 @@
+.divider {
+  margin: 0;
+  flex-shrink: 0;
+  border-width: 0;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Orientations */
+.horizontal {
+  border-bottom-width: thin;
+  width: 100%;
+}
+
+.vertical {
+  height: 100%;
+  border-width: 0px thin 0px 0px;
+}
+
+/* Variantes */
+.fullWidth {
+  width: 100%;
+}
+
+.inset {
+  margin-left: 72px;
+}
+
+.middle {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+/* États spéciaux */
+.flexItem {
+  align-self: stretch;
+  height: auto;
+}
+
+/* Avec enfants */
+.withChildren {
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  border: 0;
+}
+
+.withChildren::before,
+.withChildren::after {
+  position: relative;
+  width: 100%;
+  border-top: thin solid rgba(0, 0, 0, 0.12);
+  top: 50%;
+  content: "";
+  transform: translateY(50%);
+}
+
+/* Alignement du texte */
+.leftText::before {
+  width: 5%;
+}
+
+.rightText::after {
+  width: 5%;
+}
+
+/* Style pour le contenu enfant */
+.childrenWrapper {
+  padding: 0 8px;
+}

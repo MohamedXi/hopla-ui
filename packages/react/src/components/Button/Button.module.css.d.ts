@@ -1,0 +1,34 @@
+declare const styles: {
+  readonly button: string;
+  readonly filled: string;
+  readonly outlined: string;
+  readonly text: string;
+  readonly primaryFilled: string;
+  readonly primaryOutlined: string;
+  readonly primaryText: string;
+  readonly secondaryFilled: string;
+  readonly secondaryOutlined: string;
+  readonly secondaryText: string;
+  readonly successFilled: string;
+  readonly successOutlined: string;
+  readonly successText: string;
+  readonly errorFilled: string;
+  readonly errorOutlined: string;
+  readonly errorText: string;
+  readonly warningFilled: string;
+  readonly warningOutlined: string;
+  readonly warningText: string;
+  readonly infoFilled: string;
+  readonly infoOutlined: string;
+  readonly infoText: string;
+  readonly small: string;
+  readonly medium: string;
+  readonly large: string;
+  readonly fullWidth: string;
+  readonly disabled: string;
+  readonly startIcon: string;
+  readonly endIcon: string;
+  readonly loadingIcon: string;
+};
+
+export default styles;
