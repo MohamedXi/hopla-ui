@@ -1,0 +1,133 @@
+---
+title: Button
+description: Un composant de bouton interactif pour les actions utilisateur
+---
+
+# Button
+
+Le composant Button est utilisé pour déclencher une action ou un événement, comme soumettre un formulaire, ouvrir une boîte de dialogue, annuler une action, ou effectuer une opération de suppression.
+
+## Importation
+
+```jsx
+import { Button } from 'hopla-ui';
+```
+
+## Utilisation
+
+```jsx
+<Button variant="primary">Cliquez-moi</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonPrimary>Cliquez-moi</ButtonPrimary>
+</div>
+
+## Variantes
+
+Le composant Button prend en charge plusieurs variantes pour différents contextes.
+
+### Primary
+
+```jsx
+<Button variant="primary">Primary Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonPrimary>Primary Button</ButtonPrimary>
+</div>
+
+### Secondary
+
+```jsx
+<Button variant="secondary">Secondary Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonSecondary>Secondary Button</ButtonSecondary>
+</div>
+
+### Outline
+
+```jsx
+<Button variant="outline">Outline Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonOutline>Outline Button</ButtonOutline>
+</div>
+
+### Ghost
+
+```jsx
+<Button variant="ghost">Ghost Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonGhost>Ghost Button</ButtonGhost>
+</div>
+
+## Tailles
+
+Le composant Button est disponible en trois tailles.
+
+### Small
+
+```jsx
+<Button size="sm">Small Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonSmall>Small Button</ButtonSmall>
+</div>
+
+### Medium (par défaut)
+
+```jsx
+<Button size="md">Medium Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonMedium>Medium Button</ButtonMedium>
+</div>
+
+### Large
+
+```jsx
+<Button size="lg">Large Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonLarge>Large Button</ButtonLarge>
+</div>
+
+## État désactivé
+
+```jsx
+<Button disabled>Disabled Button</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonDisabled>Disabled Button</ButtonDisabled>
+</div>
+
+## Gestion des événements
+
+```jsx
+<Button onClick={() => console.log('Button clicked')}>Click me</Button>
+```
+
+<div className="not-prose flex flex-wrap gap-4 my-4">
+  <ButtonExample>Click me</ButtonExample>
+</div>
+
+## API
+
+| Prop        | Type                                                   | Default     | Description                                   |
+| ----------- | ------------------------------------------------------ | ----------- | --------------------------------------------- |
+| `children`  | `React.ReactNode`                                      | -           | Contenu du bouton                             |
+| `variant`   | `'primary' \| 'secondary' \| 'outline' \| 'ghost'`     | `'primary'` | Variante du bouton                            |
+| `size`      | `'sm' \| 'md' \| 'lg'`                                 | `'md'`      | Taille du bouton                              |
+| `disabled`  | `boolean`                                              | `false`     | Désactiver le bouton                          |
+| `onClick`   | `(event: React.MouseEvent<HTMLButtonElement>) => void` | -           | Fonction appelée lorsque le bouton est cliqué |
+| `className` | `string`                                               | `''`        | Classes CSS additionnelles                    |

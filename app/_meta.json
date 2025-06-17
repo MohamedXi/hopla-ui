@@ -1,0 +1,14 @@
+{
+  "index": {
+    "title": "Accueil",
+    "type": "page"
+  },
+  "components": {
+    "title": "Composants",
+    "type": "page"
+  },
+  "about": {
+    "title": "À propos",
+    "type": "page"
+  }
+}
