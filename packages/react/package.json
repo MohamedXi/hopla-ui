@@ -23,9 +23,9 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "hui-icons": "workspace:*",
-    "hui-system": "workspace:*",
-    "hui-utils": "workspace:*",
+    "@hopla-ui/icons": "workspace:*",
+    "@hopla-ui/system": "workspace:*",
+    "@hopla-ui/utils": "workspace:*",
     "clsx": "^2.1.0"
   },
   "devDependencies": {
