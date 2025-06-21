@@ -1,5 +1,5 @@
+import { Theme, ThemeOptions, createTheme } from '@hopla-ui/system';
 import React, { createContext, useContext, useMemo } from 'react';
-import { Theme, createTheme, ThemeOptions } from '@hopla-ui/system';
 
 export interface ThemeContextType {
   theme: Theme;
@@ -17,10 +17,7 @@ export interface ThemeProviderProps {
  * ThemeProvider component for Hopla UI
  * Provides theme context to all child components
  */
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({
-  theme: themeProp,
-  children,
-}) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ theme: themeProp, children }) => {
   // Initialize with the provided theme or create a default theme
   const [themeOptions, setThemeOptions] = React.useState<ThemeOptions>(
     themeProp && 'colors' in themeProp ? {} : (themeProp as ThemeOptions) || {}
@@ -28,14 +25,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
   // Create the theme object
   const theme = useMemo(() => {
-    return 'colors' in (themeProp || {})
-      ? (themeProp as Theme)
-      : createTheme(themeOptions);
+    return 'colors' in (themeProp || {}) ? (themeProp as Theme) : createTheme(themeOptions);
   }, [themeProp, themeOptions]);
 
   // Function to update theme
   const updateTheme = (newOptions: ThemeOptions) => {
-    setThemeOptions((prevOptions) => ({
+    setThemeOptions(prevOptions => ({
       ...prevOptions,
       ...newOptions,
     }));
@@ -54,15 +49,15 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   React.useEffect(() => {
     // Apply CSS variables to :root
     const root = document.documentElement;
-    
+
     // Colors
     Object.entries(theme.colors).forEach(([colorName, colorValue]) => {
       if (typeof colorValue === 'object') {
         Object.entries(colorValue).forEach(([shade, value]) => {
-          root.style.setProperty(`--hopla-${colorName}-${shade}`, value);
+          root.style.setProperty(`--hopla-${colorName}-${shade}`, String(value));
         });
       } else {
-        root.style.setProperty(`--hopla-${colorName}`, colorValue as string);
+        root.style.setProperty(`--hopla-${colorName}`, String(colorValue));
       }
     });
 
@@ -85,23 +80,30 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     Object.entries(theme.transitions.duration).forEach(([name, value]) => {
       root.style.setProperty(`--hopla-transitions-duration-${name}`, `${value}ms`);
     });
-
   }, [theme]);
 
-  return (
-    <ThemeContext.Provider value={contextValue}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 };
+
+// Créer un thème par défaut singleton pour éviter de recréer le thème à chaque appel
+const defaultThemeContext: ThemeContextType = (() => {
+  const defaultTheme = createTheme({});
+  return {
+    theme: defaultTheme,
+    updateTheme: (_options: ThemeOptions) => {
+      console.warn(
+        'updateTheme is not available outside of a ThemeProvider. Use ThemeProvider to enable theme customization.'
+      );
+    },
+  };
+})();
 
 /**
  * Hook to access the theme context
+ * If used outside of a ThemeProvider, returns a default theme
  */
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
+  // Si aucun ThemeProvider n'est trouvé, utiliser le thème par défaut au lieu de lancer une erreur
+  return context || defaultThemeContext;
 };
