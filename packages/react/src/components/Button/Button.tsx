@@ -3,8 +3,8 @@ import React, { forwardRef } from 'react';
 
 import styles from './Button.module.css';
 
-export type ButtonVariant = 'filled' | 'outlined' | 'text';
-export type ButtonColor = 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
+export type ButtonVariant = 'filled' | 'outlined' | 'text' | 'ghost';
+export type ButtonColor = 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info' | 'neutral';
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

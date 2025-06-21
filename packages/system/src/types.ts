@@ -1,3 +1,5 @@
+export type ThemeMode = 'light' | 'dark';
+
 export interface ColorPalette {
   50: string;
   100: string;
@@ -42,6 +44,20 @@ export interface Colors {
   divider: string;
 }
 
+/**
+ * Options pour la palette de couleurs
+ */
+export interface PaletteOptions {
+  primary?: string;
+  secondary?: string;
+  success?: string;
+  error?: string;
+  warning?: string;
+  info?: string;
+  tonalOffset?: number;
+  contrastThreshold?: number;
+}
+
 export interface TypographyVariants {
   h1: React.CSSProperties;
   h2: React.CSSProperties;
@@ -56,6 +72,11 @@ export interface TypographyVariants {
   button: React.CSSProperties;
   caption: React.CSSProperties;
   overline: React.CSSProperties;
+  responsive?: {
+    [variant: string]: {
+      [breakpoint: string]: Partial<React.CSSProperties>;
+    };
+  };
 }
 
 export interface BreakpointValues {
@@ -90,12 +111,16 @@ export interface ZIndex {
 }
 
 export interface Theme {
+  mode?: ThemeMode;
   colors: Colors;
   typography: TypographyVariants;
   breakpoints: Breakpoints;
   spacing: Spacing;
   shadows: string[];
   zIndex: ZIndex;
+  palette?: PaletteOptions;
+  cssVariables?: boolean;
+  components?: Record<string, unknown>;
   shape: {
     borderRadius: number;
   };

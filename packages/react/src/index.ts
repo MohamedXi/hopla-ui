@@ -1,10 +1,13 @@
 // Export des composants existants
 // Nous ajouterons les autres composants au fur et à mesure de leur développement
 export * from './components/Checkbox';
+export * from './components/Button';
+export * from './components/IconButton';
+export * from './components/ButtonGroup';
+export * from './components/LikeButton';
 
 // Note: Les autres composants et hooks seront décommentés au fur et à mesure de leur implémentation
 /*
-export * from './components/Button';
 export * from './components/TextField';
 export * from './components/Card';
 export * from './components/Avatar';

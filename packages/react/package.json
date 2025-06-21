@@ -1,5 +1,5 @@
 {
-  "name": "@hopla-ui/react",
+  "name": "hui-design",
   "version": "0.1.0",
   "description": "Bibliothèque de composants React modernes et accessibles",
   "main": "./dist/index.js",
@@ -23,9 +23,9 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@hopla-ui/icons": "workspace:*",
-    "@hopla-ui/system": "workspace:*",
-    "@hopla-ui/utils": "workspace:*",
+    "hui-icons": "workspace:*",
+    "hui-system": "workspace:*",
+    "hui-utils": "workspace:*",
     "clsx": "^2.1.0"
   },
   "devDependencies": {

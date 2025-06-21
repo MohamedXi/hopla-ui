@@ -1,10 +1,10 @@
-import { Button } from './Button';
+import { IconButton } from './IconButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
-  component: Button,
+const meta: Meta<typeof IconButton> = {
+  title: 'Components/IconButton',
+  component: IconButton,
   parameters: {
     layout: 'centered',
   },
@@ -34,13 +34,6 @@ const meta: Meta<typeof Button> = {
         defaultValue: { summary: 'medium' },
       },
     },
-    fullWidth: {
-      control: 'boolean',
-      description: 'Si true, le bouton prendra toute la largeur disponible',
-      table: {
-        defaultValue: { summary: false },
-      },
-    },
     disabled: {
       control: 'boolean',
       description: 'Si true, le bouton sera désactivé',
@@ -60,11 +53,29 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof IconButton>;
+
+// Icône simple pour les exemples
+const HomeIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+  </svg>
+);
 
 export const Default: Story = {
   args: {
-    children: 'Button',
+    icon: <HomeIcon />,
     variant: 'filled',
     color: 'primary',
     size: 'medium',
@@ -73,7 +84,7 @@ export const Default: Story = {
 
 export const Outlined: Story = {
   args: {
-    children: 'Outlined Button',
+    icon: <HomeIcon />,
     variant: 'outlined',
     color: 'primary',
   },
@@ -81,74 +92,51 @@ export const Outlined: Story = {
 
 export const Text: Story = {
   args: {
-    children: 'Text Button',
+    icon: <HomeIcon />,
     variant: 'text',
+    color: 'primary',
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    icon: <HomeIcon />,
+    variant: 'ghost',
     color: 'primary',
   },
 };
 
 export const Small: Story = {
   args: {
-    children: 'Small Button',
+    icon: <HomeIcon />,
     size: 'small',
   },
 };
 
 export const Large: Story = {
   args: {
-    children: 'Large Button',
+    icon: <HomeIcon />,
     size: 'large',
   },
 };
 
 export const Disabled: Story = {
   args: {
-    children: 'Disabled Button',
+    icon: <HomeIcon />,
     disabled: true,
   },
 };
 
 export const Loading: Story = {
   args: {
-    children: 'Loading Button',
+    icon: <HomeIcon />,
     loading: true,
-  },
-};
-
-export const WithIcons: Story = {
-  args: {
-    children: 'With Icons',
-    startIcon: '→',
-    endIcon: '←',
-  },
-};
-
-export const FullWidth: Story = {
-  args: {
-    children: 'Full Width Button',
-    fullWidth: true,
-  },
-};
-
-export const Ghost: Story = {
-  args: {
-    children: 'Ghost Button',
-    variant: 'ghost',
-    color: 'primary',
   },
 };
 
 export const Neutral: Story = {
   args: {
-    children: 'Neutral Button',
-    color: 'neutral',
-  },
-};
-
-export const NeutralGhost: Story = {
-  args: {
-    children: 'Neutral Ghost',
-    variant: 'ghost',
+    icon: <HomeIcon />,
     color: 'neutral',
   },
 };

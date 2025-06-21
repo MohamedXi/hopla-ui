@@ -1,5 +1,16 @@
-import React from 'react';
 import type { Preview } from '@storybook/react';
+import React from 'react';
+import { ThemeProvider } from '../packages/react/src/providers/ThemeProvider';
+import { defaultTheme } from '../packages/system/src/defaultTheme';
+
+// Décorateur global pour envelopper tous les composants avec ThemeProvider
+const withThemeProvider = Story => {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Story />
+    </ThemeProvider>
+  );
+};
 
 const preview: Preview = {
   parameters: {
@@ -24,6 +35,8 @@ const preview: Preview = {
       ],
     },
   },
+  // Ajouter le décorateur global
+  decorators: [withThemeProvider],
 };
 
 export default preview;

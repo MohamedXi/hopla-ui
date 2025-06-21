@@ -1,0 +1,78 @@
+.buttonGroup {
+  display: inline-flex;
+  position: relative;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Style for buttons inside the group */
+.groupedButton {
+  margin: 0;
+}
+
+/* Horizontal button group styles */
+.buttonGroup:not(.vertical) > :not(:first-child) {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.buttonGroup:not(.vertical) > :not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Vertical button group styles */
+.vertical > :not(:first-child) {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.vertical > :not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Variants */
+.filled .groupedButton:hover {
+  z-index: 1;
+}
+
+.outlined .groupedButton {
+  border-right-width: 0;
+}
+
+.outlined .groupedButton:last-child {
+  border-right-width: 1px;
+}
+
+.outlined.vertical .groupedButton {
+  border-right-width: 1px;
+  border-bottom-width: 0;
+}
+
+.outlined.vertical .groupedButton:last-child {
+  border-bottom-width: 1px;
+}
+
+/* Focus styles */
+.buttonGroup .groupedButton:focus-visible {
+  z-index: 2;
+}
+
+/* Full width styles */
+.fullWidth .groupedButton {
+  flex: 1;
+}
