@@ -2,11 +2,11 @@ import { SxProps, styled } from '@hopla-ui/styles';
 import React, { forwardRef } from 'react';
 
 import { ButtonColor, ButtonSize, ButtonVariant } from '../Button/Button';
-import { buttonGroupStyles } from './ButtonGroup.styled';
+import { iconButtonGroupStyles } from './IconButtonGroup.styled';
 
-export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IconButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
-   * Le contenu du groupe de boutons
+   * Le contenu du groupe de boutons d'icônes
    */
   children: React.ReactNode;
   /**
@@ -50,19 +50,20 @@ export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 // Créer un composant de base stylisé
-const ButtonGroupRoot = styled(
+const IconButtonGroupRoot = styled(
   'div',
   () => ({
-    ...buttonGroupStyles().root,
+    ...iconButtonGroupStyles().root,
   }),
-  { name: 'ButtonGroup' }
+  { name: 'IconButtonGroup' }
 );
 
 /**
- * Le composant ButtonGroup permet de regrouper plusieurs boutons ensemble.
+ * Le composant IconButtonGroup permet de regrouper plusieurs boutons d'icônes ensemble.
  * Les boutons dans un groupe partagent les mêmes propriétés et sont visuellement connectés.
+ * Ce composant est spécialement conçu pour les boutons d'icônes sans texte.
  */
-export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>((props, ref) => {
+export const IconButtonGroup = forwardRef<HTMLDivElement, IconButtonGroupProps>((props, ref) => {
   const {
     children,
     variant = 'filled',
@@ -77,16 +78,16 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>((props, 
   } = props;
 
   // Obtenir les styles du thème actuel
-  const themeStyles = buttonGroupStyles();
-
+  const themeStyles = iconButtonGroupStyles();
+  
   // Construire les styles basés sur les props
   const groupSx = {
-    // Styles de base appliqués dans ButtonGroupRoot
-
+    // Styles de base appliqués dans IconButtonGroupRoot
+    
     // Appliquer les styles conditionnels
     ...(vertical ? themeStyles.vertical : {}),
     ...(fullWidth ? themeStyles.fullWidth : {}),
-
+    
     // Fusionner avec les styles sx personnalisés
     ...(sx || {}),
   };
@@ -146,12 +147,18 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>((props, 
   });
 
   return (
-    <ButtonGroupRoot ref={ref} className={className} role="group" sx={groupSx} {...rest}>
+    <IconButtonGroupRoot 
+      ref={ref} 
+      className={className} 
+      role="group" 
+      sx={groupSx}
+      {...rest}
+    >
       {childrenWithProps}
-    </ButtonGroupRoot>
+    </IconButtonGroupRoot>
   );
 });
 
-ButtonGroup.displayName = 'ButtonGroup';
+IconButtonGroup.displayName = 'IconButtonGroup';
 
-export default ButtonGroup;
+export default IconButtonGroup;

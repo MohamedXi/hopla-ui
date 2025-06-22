@@ -22,7 +22,7 @@
     "@hopla-ui/utils": "workspace:*"
   },
   "devDependencies": {
-    "tsup": "^8.0.0",
-    "typescript": "^5.3.0"
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
   }
 }

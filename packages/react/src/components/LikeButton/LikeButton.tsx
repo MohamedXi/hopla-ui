@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 import React, { forwardRef, useState } from 'react';
 
-import { ButtonSize } from './Button';
 import styles from './LikeButton.module.css';
+import { ButtonSize } from '../Button/Button';
 
-export interface LikeButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {
+export interface LikeButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {
   /**
    * Si `true`, le bouton sera dans l'état "aimé"
    * @default false
@@ -67,7 +68,7 @@ export const LikeButton = forwardRef<HTMLButtonElement, LikeButtonProps>((props,
       } else {
         setInternalLiked(newLiked);
       }
-      
+
       if (props.onClick) {
         props.onClick(event);
       }
@@ -92,12 +93,12 @@ export const LikeButton = forwardRef<HTMLButtonElement, LikeButtonProps>((props,
         aria-pressed={isLiked}
         {...rest}
       >
-        <svg 
-          className={styles.icon} 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 24 24" 
-          fill={isLiked ? "currentColor" : "none"}
-          stroke="currentColor" 
+        <svg
+          className={styles.icon}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill={isLiked ? 'currentColor' : 'none'}
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -106,7 +107,7 @@ export const LikeButton = forwardRef<HTMLButtonElement, LikeButtonProps>((props,
         </svg>
         <span className={styles.label}>{isLiked ? 'Liked' : label}</span>
       </button>
-      <button 
+      <button
         className={styles.countButton}
         disabled={disabled}
         onClick={handleClick}

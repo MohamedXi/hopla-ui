@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 
-import { ButtonColor, ButtonSize, ButtonVariant } from './Button';
 import styles from './IconButton.module.css';
 import { useHoplaStyles, hoplaVar } from '../../hooks/useHoplaStyles';
 import { useTheme } from '../../providers/ThemeProvider';
+import { ButtonColor, ButtonSize, ButtonVariant } from '../Button/Button';
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**

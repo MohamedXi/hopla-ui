@@ -1,7 +1,7 @@
 {
-  "name": "@hopla-ui/react",
+  "name": "@hopla-ui/styles",
   "version": "0.1.0",
-  "description": "Bibliothèque de composants React modernes et accessibles",
+  "description": "Système de style pour Hopla UI",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -23,10 +23,9 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@hopla-ui/icons": "workspace:*",
-    "@hopla-ui/styles": "workspace:*",
     "@hopla-ui/system": "workspace:*",
-    "@hopla-ui/utils": "workspace:*"
+    "@hopla-ui/utils": "workspace:*",
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@types/react": "^19.1.8",

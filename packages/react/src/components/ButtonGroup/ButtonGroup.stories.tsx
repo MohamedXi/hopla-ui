@@ -1,6 +1,5 @@
-import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup';
-import { IconButton } from './IconButton';
+import { Button } from '../Button/Button';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -138,18 +137,7 @@ export const WithIcons: Story = {
   },
 };
 
-export const IconButtonGroup: Story = {
-  args: {
-    variant: 'filled',
-    color: 'primary',
-    size: 'medium',
-    children: [
-      <IconButton key="1" icon={<HomeIcon />} />,
-      <IconButton key="2" icon={<HomeIcon />} />,
-      <IconButton key="3" icon={<HomeIcon />} />,
-    ],
-  },
-};
+// L'exemple IconButtonGroup a été déplacé vers le composant IconButtonGroup dédié
 
 export const FullWidth: Story = {
   args: {

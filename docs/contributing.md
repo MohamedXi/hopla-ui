@@ -226,6 +226,182 @@ pnpm test
 pnpm --filter @hopla-ui/react test
 ```
 
+## Testing Locally
+
+This section provides a comprehensive guide on how to test Hopla UI components locally during development.
+
+### Setting Up the Test Environment
+
+1. **Prerequisites**
+
+   Ensure you have all the required dependencies installed:
+
+   ```bash
+   pnpm install
+   ```
+
+2. **Build the Packages**
+
+   Before testing, make sure all packages are built:
+
+   ```bash
+   pnpm build
+   ```
+
+### Testing Methods
+
+#### 1. Using Storybook
+
+Storybook provides an isolated environment to develop and test UI components visually.
+
+1. **Launch Storybook**
+
+   ```bash
+   pnpm storybook
+   ```
+
+   This will start Storybook on `http://localhost:6006`
+
+2. **Interacting with Components**
+   - Browse components by navigating the sidebar
+   - Test different component states using the Controls panel
+   - View component documentation in the Docs tab
+   - Test component interactions directly in the Canvas view
+
+#### 2. Running Automated Tests
+
+1. **Run All Tests**
+
+   ```bash
+   pnpm test
+   ```
+
+2. **Run Tests in Watch Mode**
+
+   For development, use watch mode to automatically re-run tests when files change:
+
+   ```bash
+   pnpm test:watch
+   ```
+
+3. **Test Specific Components or Packages**
+
+   ```bash
+   # Test a specific package
+   pnpm --filter @hopla-ui/react test
+   
+   # Test with specific pattern matching
+   pnpm test -- -t "Button"
+   ```
+
+#### 3. Testing in a Local Application
+
+You can test components in a real application environment using local linking.
+
+##### Option A: Using the Automated Script (Recommended)
+
+We provide an automated script that handles the entire process of building packages, publishing them locally with yalc, and linking them to your test application:
+
+```bash
+# From the root of the monorepo
+pnpm prepare-local-test
+```
+
+When prompted, enter the path to your test application. The script will:
+
+1. Build all packages
+2. Publish them locally using yalc
+3. Add them to your test application
+4. Configure watch mode for automatic updates
+
+You can also specify the target application directly:
+
+```bash
+pnpm prepare-local-test --target-app /path/to/your/test-app
+```
+
+For continuous development, run the watch mode in a separate terminal:
+
+```bash
+pnpm build:watch
+```
+
+Changes to your components will be automatically rebuilt and propagated to your test application.
+
+##### Option B: Manual Setup
+
+If you prefer to set up the testing environment manually, you can use one of the following approaches:
+
+1. **Build the packages in watch mode**
+
+   ```bash
+   pnpm build:watch
+   ```
+
+2. **Link the packages locally**
+
+   ```bash
+   # From the root of the monorepo
+   cd packages/react
+   pnpm link --global
+   
+   # Then in your test application
+   cd /path/to/your/test-app
+   pnpm link --global @hopla-ui/react
+   ```
+
+3. **Alternative: Using yalc manually**
+
+   For a more reliable workflow, you can use [yalc](https://github.com/wclr/yalc):
+
+   ```bash
+   # Install yalc globally
+   npm install -g yalc
+   
+   # Publish the package locally
+   cd packages/react
+   yalc publish
+   
+   # Add the package to your test app
+   cd /path/to/your/test-app
+   yalc add @hopla-ui/react
+   ```
+
+#### 4. Component-Specific Testing
+
+1. **Testing Responsive Behavior**
+   - Use browser dev tools to test different viewport sizes
+   - In Storybook, use the viewport addon to simulate different devices
+
+2. **Testing Accessibility**
+   - Use the accessibility addon in Storybook
+   - Run accessibility tests with:
+     ```bash
+     pnpm test -- -t "accessibility"
+     ```
+
+3. **Testing Theme Variations**
+   - Test components with different theme configurations in Storybook
+   - Create stories with custom ThemeProvider wrappers
+
+### Troubleshooting Common Issues
+
+- **Component not updating during development**:
+  Ensure the build:watch script is running and that your test app is correctly linked
+
+- **Tests failing unexpectedly**:
+  Check for environment-specific issues by running tests with the `--verbose` flag
+
+- **Storybook not showing latest changes**:
+  Try clearing the Storybook cache with `pnpm dlx storybook@latest cache --clear`
+
+### Best Practices
+
+- Test components across different browsers
+- Verify both light and dark theme modes
+- Test keyboard navigation and screen reader compatibility
+- Ensure components work with different prop combinations
+
 ## Documentation
 
 - Each component should have complete documentation

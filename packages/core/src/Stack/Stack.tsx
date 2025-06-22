@@ -51,9 +51,13 @@ export const Stack = forwardRef<HTMLElement, StackProps>((props, ref) => {
     };
 
     // Utilisation d'une assertion de type pour éviter l'erreur TS2769
-    return React.cloneElement(child, {
+    const childElement = child as React.ReactElement;
+    const childProps = childElement.props || {};
+    const childStyle = (childProps as any).style || {};
+    
+    return React.cloneElement(childElement, {
       style: {
-        ...(child.props.style || {}),
+        ...childStyle,
         ...spacingStyles,
       },
     } as React.HTMLAttributes<HTMLElement>);

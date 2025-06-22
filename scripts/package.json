@@ -1,0 +1,7 @@
+{
+  "name": "@hopla-ui/scripts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Scripts utilitaires pour le développement de Hopla UI"
+}

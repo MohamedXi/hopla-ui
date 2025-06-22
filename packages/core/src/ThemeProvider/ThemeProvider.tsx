@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from 'react';
+import * as React from 'react';
+const { createContext, useContext } = React;
 import { Theme, defaultTheme } from '@hopla-ui/system';
 import { ThemeProviderProps } from '../types';
 
@@ -18,11 +19,11 @@ export function useTheme(): Theme {
  * @param props - Props du composant
  * @returns Composant React
  */
-export function ThemeProvider({ theme, children }: ThemeProviderProps): JSX.Element {
-  return (
-    <ThemeContext.Provider value={theme}>
-      {children}
-    </ThemeContext.Provider>
+export function ThemeProvider({ theme, children }: ThemeProviderProps): React.ReactNode {
+  return React.createElement(
+    ThemeContext.Provider,
+    { value: theme },
+    children
   );
 }
 
